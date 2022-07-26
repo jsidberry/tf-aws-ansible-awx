@@ -2,8 +2,6 @@
 
 This Terraform code will install an AWS EC2 with AWX, ready to be used.
 
-Please see: https://unofficialaciguide.com for full details
-
 # What is AWX
 AWX is the Open-Sourced foundation of Ansible Tower. Ansible was purchased by Red Hat around 2015 and its product Ansible Tower is a commercial version based on AWX maintained and supported by Red Hat. Ansible AWX and Ansible Tower have extremely similar features, though AWX lacks the obvious integration into the Red Hat ecosystem.
 
