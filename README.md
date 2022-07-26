@@ -36,9 +36,9 @@ The actual bringup should not take more than 10 minutes. Before you start, go to
           variable "awx_pass" { default = "putPassword_here" }
 
 5) run the terraform script:
-      a) `terraform init`
-      b) `terraform validate`
-      c) with no errors: `terraform apply`
+      a) terraform init
+      b) terraform validate
+      c) terraform apply
 
 6) the output on the screen will give you the ec2 Public IP.  SSH to the ec2 with ec2-user@publicIP and run the following scripts:
      ./1.runansible_play.sh  # this ansible playbook will take 5 minutes to run
