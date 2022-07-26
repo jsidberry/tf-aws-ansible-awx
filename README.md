@@ -21,19 +21,24 @@ The actual bringup should not take more than 10 minutes. Before you start, go to
 
 ```
 1) from the linux/mac box where you will do the install from, make sure you have terraform binary installed
-          a) browse to https://terraform.io/downloads,  go to the bottom and right-click and copy the terraform binary for your platform
-          b) on your mac or linux box,  do a curl -O <the copied buffer>
-          c) unzip the file that you just curled in.  e.g.  unzip terraform_1.1.6_linux_386.zip
-          d) sudo mv terraform /usr/local/bin
+     a) browse to https://terraform.io/downloads,  go to the bottom and right-click and copy the terraform binary for your platform
+     b) on your mac or linux box,  do a curl -O <the copied buffer>
+     c) unzip the file that you just curled in.  e.g.  unzip terraform_1.1.6_linux_386.zip
+     d) sudo mv terraform /usr/local/bin
 
 2) clone this directory:   git clone https://github.com/soumukhe/awx_on_ec2_terraform.git
 3) cd awx_on_ec2_terraform
 4) vi overfide.tf and put in your AWS access-keys and secret keys and awx desired password
 
+          variable "access_key" { default = "put_access_key_value_here" }
+          variable "secret_key" { default = "put_secret_key_value_here" }
+
+          variable "awx_pass" { default = "putPassword_here" }
+
 5) run the terraform script:
-      a) terraform init
-      b) terraform validate
-      c) terraform apply
+      a) `terraform init`
+      b) `terraform validate`
+      c) with no errors: `terraform apply`
 
 6) the output on the screen will give you the ec2 Public IP.  SSH to the ec2 with ec2-user@publicIP and run the following scripts:
      ./1.runansible_play.sh  # this ansible playbook will take 5 minutes to run
